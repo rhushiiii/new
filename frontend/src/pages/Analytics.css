@@ -1,0 +1,240 @@
+.analytics-page {
+    max-width: 1400px;
+}
+
+/* Meter Selector */
+.meter-selector {
+    margin-bottom: var(--spacing-xl);
+}
+
+.selector-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.selector-icon {
+    color: var(--color-accent-primary);
+}
+
+.selector-header h3 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+}
+
+.selector-header p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* Chart Section */
+.chart-section {
+    animation: fadeIn 0.5s ease;
+}
+
+.chart-card {
+    margin-bottom: var(--spacing-xl);
+}
+
+.chart-card .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chart-card .card-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.chart-container {
+    margin-top: var(--spacing-lg);
+}
+
+.chart-loading,
+.chart-error,
+.chart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    color: var(--color-text-muted);
+}
+
+.chart-loading p,
+.chart-error p,
+.chart-empty p {
+    margin-top: var(--spacing-md);
+}
+
+.chart-error {
+    color: var(--color-danger);
+}
+
+/* Custom Tooltip */
+.chart-tooltip {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.tooltip-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0 0 var(--spacing-sm);
+}
+
+.tooltip-value {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin: 0;
+    font-weight: 500;
+}
+
+.tooltip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.tooltip-anomaly {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-sm) 0 0;
+    color: var(--color-danger);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+/* Stats Row */
+.stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+@media (max-width: 900px) {
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stats-card .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.stat-item {
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.stat-label {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-value {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+/* Anomaly Card */
+.anomaly-card.suspicious {
+    border-color: var(--color-warning);
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.anomaly-card .card-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.anomaly-details {
+    margin-top: var(--spacing-md);
+}
+
+.anomaly-score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.score-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.score-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+}
+
+.score-value.risk-critical,
+.score-value.risk-high {
+    color: var(--color-danger);
+}
+
+.score-value.risk-medium {
+    color: var(--color-warning);
+}
+
+.score-value.risk-low {
+    color: var(--color-success);
+}
+
+.anomaly-explanation {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-warning);
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-2xl);
+    min-height: 400px;
+}
+
+.empty-icon {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.empty-state p {
+    max-width: 400px;
+    margin: 0;
+}

@@ -50,14 +50,25 @@ app = FastAPI(
 )
 
 # Configure CORS
-origins = settings.CORS_ORIGINS.split(",")
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+cors_origins_str = settings.CORS_ORIGINS.strip()
+if cors_origins_str == "*":
+    # Allow all origins
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=False,  # Must be False when using "*"
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+else:
+    origins = [origin.strip() for origin in cors_origins_str.split(",")]
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 # Include routers
 app.include_router(upload_router, prefix=settings.API_PREFIX)
